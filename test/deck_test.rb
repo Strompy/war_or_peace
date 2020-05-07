@@ -79,10 +79,22 @@ class DeckTest < Minitest::Test
     assert_equal [card3], deck.high_ranking_cards
   end
 
+  def test_remove_card_didnt_break_percent_high_ranking_card
+    card1 = Card.new(:diamond, 'Queen', 12)
+    card2 = Card.new(:spade, '3', 3)
+    card3 = Card.new(:heart, 'Ace', 14)
+    cards = [card1, card2, card3]
+
+    deck = Deck.new(cards)
+    deck.remove_card
+
+    assert_equal 2/3, deck.percent_high_ranking_cards
+  end
+
 
 end
 
-# Branch practice comment
+
 # test it didn't break percent_high_ranking_cards
 # test it can add card
 # test nothing previus broke after adding card
