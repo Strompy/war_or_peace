@@ -22,18 +22,12 @@ class Deck
     percent.round(2)
   end
 
-
   def remove_card
     cards.shift
   end
 
-  # def add_card(suit, value, rank)
-  #   card4 = Card.new(suit, value, rank)
-  #   cards << card4
-  # end
-
+  def add_card(card)
+    cards.push(card)
+  end
 
 end
-
-
-# add_card (to bottom of deck)

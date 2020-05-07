@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/card'
 require './lib/deck'
+# require 'pry'
 
 class DeckTest < Minitest::Test
   def test_it_exists
@@ -52,7 +53,7 @@ class DeckTest < Minitest::Test
 
     deck = Deck.new(cards)
 
-    assert_equal 2/3, deck.percent_high_ranking_cards
+    assert_equal 66.67, deck.percent_high_ranking_cards
   end
 
   def test_it_can_remove_card
@@ -68,6 +69,7 @@ class DeckTest < Minitest::Test
   end
 
   def test_remove_card_didnt_break_high_ranking_card
+
     card1 = Card.new(:diamond, 'Queen', 12)
     card2 = Card.new(:spade, '3', 3)
     card3 = Card.new(:heart, 'Ace', 14)
@@ -80,6 +82,7 @@ class DeckTest < Minitest::Test
   end
 
   def test_remove_card_didnt_break_percent_high_ranking_card
+
     card1 = Card.new(:diamond, 'Queen', 12)
     card2 = Card.new(:spade, '3', 3)
     card3 = Card.new(:heart, 'Ace', 14)
@@ -88,13 +91,21 @@ class DeckTest < Minitest::Test
     deck = Deck.new(cards)
     deck.remove_card
 
-    assert_equal 2/3, deck.percent_high_ranking_cards
+    assert_equal 50.0, deck.percent_high_ranking_cards
   end
 
+  def test_it_can_add_card
+    card1 = Card.new(:diamond, 'Queen', 12)
+    card2 = Card.new(:spade, '3', 3)
+    card3 = Card.new(:heart, 'Ace', 14)
+    cards = [card1, card2, card3]
+
+    deck = Deck.new(cards)
+
+    card4 = Card.new(:heart, '5', '5')
+    deck.add_card(card4)
+
+    assert_equal [card1, card2, card3, card4], deck.cards
+  end
 
 end
-
-
-# test it didn't break percent_high_ranking_cards
-# test it can add card
-# test nothing previus broke after adding card
