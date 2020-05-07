@@ -42,7 +42,3 @@ class PlayerTest < Minitest::Test
     assert_equal true, player.has_lost?
   end
 end
-
-
-# test it has attributes name, deck
-# test it has lost after removing cards (should lose on empty deck)

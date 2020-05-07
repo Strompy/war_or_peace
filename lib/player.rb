@@ -13,6 +13,3 @@ attr_reader :name,
   end
 
 end
-
-# create player with attributes name, deck,
-# create has_lost? method
