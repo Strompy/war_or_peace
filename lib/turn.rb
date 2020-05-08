@@ -37,6 +37,9 @@ attr_reader :player1,
     end
   end
 
+  def pile_cards
+  end
+
 end
 
 
