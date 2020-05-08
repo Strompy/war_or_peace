@@ -9,11 +9,29 @@ attr_reader :player1,
     @spoils_of_war = []
   end
 
+  def type
+    if player1.deck.rank_of_card_at(0) != player2.deck.rank_of_card_at(0)
+      :basic
+    elsif player1.deck.rank_of_card_at(0) == player2.deck.rank_of_card_at(0) && player1.deck.rank_of_card_at(2) == player2.deck.rank_of_card_at(2)
+      :mutually_assured_destruction
+    else
+      :war
+    end
+  end
+
+  def winner
+    if type == :basic
+      if player1.deck.rank_of_card_at(0) > player2.deck.rank_of_card_at(0)
+        player1
+      elsif
+        player2
+      end
+    end
+  end
+
 end
 
-# A turn is initialized with player1 and player2
-# A turn has attributes for player1, player2, spoils_of_war
-# types of turns (method?): basic, war, mutually_assured_destruction
+
 # create basic (method?). rank_of_card_at(0) is not equal
 # create war (method?). rank_of_card_at(0) are equal
 # create mutually_assured_destruction (method?). rank_of_card_at(0) and rank_of_card_at(2) are both equal
