@@ -59,7 +59,3 @@ attr_reader :player1,
   end
 
 end
-
-
-# create pile_cards meethod. send cards from player's decks to @spoils_of_war
-# create award_spoils method. add cards from @spoils_of_war to the winner of the turn
