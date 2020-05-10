@@ -19,7 +19,7 @@ class Play
     p "Type 'GO' to start the game!"
     p "------------------------------------------------------------------"
     gets.chomp.upcase!
-    #start game code
+    play 
   end
 
   def play

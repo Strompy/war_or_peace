@@ -9,6 +9,7 @@ require 'pry'
 
 class PlayTest<Minitest::Test
   def test_it_exists
+    skip
     card1 = Card.new(:heart, 'Jack', 11)
     card2 = Card.new(:heart, '10', 10)
     card3 = Card.new(:heart, '9', 9)
@@ -25,7 +26,7 @@ class PlayTest<Minitest::Test
     player2 = Player.new("Aurora", deck2)
 
     play = Play.new(player1, player2)
-require "pry"; binding.pry
+
     assert_instance_of Play, play
   end
 
@@ -104,7 +105,7 @@ skip
   end
 
   def test_play_method_mutually_assured_destruction
-    skip
+
     card1 = Card.new(:heart, 'Jack', 11)
     card2 = Card.new(:heart, '10', 10)
     card3 = Card.new(:heart, '9', 9)
