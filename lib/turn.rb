@@ -56,6 +56,7 @@ attr_reader :player1,
 
   def award_spoils(winner)
     winner.deck.add_card(@spoils_of_war).flatten!
+    @spoils_of_war = []
   end
 
 end
