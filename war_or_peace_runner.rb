@@ -3,7 +3,6 @@ require './lib/deck'
 require './lib/player'
 require './lib/turn'
 require './lib/play'
-require 'pry'
 
 cards = []
 cards << card1 = Card.new(:heart, 'Ace', 14)
